@@ -162,7 +162,7 @@ export const buildGqlQuery = (
   buildMetaArgs,
   buildArgs,
   buildApolloArgs
-) => (resource, aorFetchType, queryType, variables) => {
+) => (resource, aorFetchType, queryType, variables, params) => {
   const { sortField, sortOrder, ...metaVariables } = variables;
   const apolloArgs = buildApolloArgs(queryType, variables);
   const args = buildArgs(queryType, variables);

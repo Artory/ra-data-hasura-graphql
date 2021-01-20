@@ -24,6 +24,7 @@ import {
 import { buildQueryFactory } from './buildQuery';
 
 export {
+  buildGqlQuery,
   buildFields,
   buildMetaArgs,
   buildArgs,
@@ -49,6 +50,7 @@ const defaultOptions = {
 };
 
 const buildGqlQueryDefaults = {
+  buildGqlQuery,
   buildFields,
   buildMetaArgs,
   buildArgs,
@@ -67,7 +69,7 @@ const buildCustomDataProvider = (
   };
 
   const customBuildGqlQuery = (introspectionResults) =>
-    buildGqlQuery(
+    buildGqlQueryOptions.buildGqlQuery(
       introspectionResults,
       buildGqlQueryOptions.buildFields,
       buildGqlQueryOptions.buildMetaArgs,
